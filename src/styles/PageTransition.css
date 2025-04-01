@@ -1,0 +1,10 @@
+.transition-slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a8681, #10a8a2);
+  transform-origin: top;
+  z-index: 9999;
+} 

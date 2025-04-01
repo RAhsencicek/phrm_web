@@ -1,0 +1,165 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  padding: 15px 50px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(26, 26, 26, 0.85) !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(79, 99, 61, 0.2);
+}
+
+.logo h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  transition: color 0.3s ease;
+  color: #6c8a54; /* Haki yeşil */
+}
+
+.header.scrolled .logo h1 {
+  color: #a3bd8a; /* Daha açık haki */
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+  color: var(--text-light);
+}
+
+.header.scrolled .nav-menu a {
+  color: var(--text-light);
+}
+
+.nav-menu li.active a {
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--accent-color);
+}
+
+.dropdown span {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.auth-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-btn {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  color: var(--text-light);
+}
+
+.header.scrolled .login-btn {
+  color: var(--text-light);
+}
+
+.register-btn {
+  background-color: var(--primary-color);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(79, 99, 61, 0.3);
+}
+
+.register-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 99, 61, 0.4);
+}
+
+.cart-btn {
+  position: relative;
+  text-decoration: none;
+}
+
+.cart-icon {
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .header.scrolled {
+    padding: 10px 20px;
+  }
+  
+  .nav-menu ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .logo {
+    margin-bottom: 15px;
+  }
+  
+  .nav-menu {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .nav-menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+  }
+  
+  .auth-menu {
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+  }
+} 
